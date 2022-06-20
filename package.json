@@ -1,0 +1,14 @@
+{
+  "name": "marvel-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel public/index.html --open",
+    "build": "parcel public/index.html"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "parcel": "^2.6.1"
+  }
+}
