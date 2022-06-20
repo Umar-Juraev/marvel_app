@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  scrollbar-color: #5151fa #000;
+  scrollbar-width: thin;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+* ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+* ::-webkit-scrollbar-thumb {
+  background-color: #5151fa;
+  border-radius: 8px;
+}
+
+* ::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+body {
+  background-color: #000;
+}
+
+/*# sourceMappingURL=index.f320dde6.css.map */

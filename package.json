@@ -9,6 +9,9 @@
     "axios": "^0.27.2"
   },
   "devDependencies": {
-    "parcel": "^2.6.1"
+    "@parcel/transformer-sass": "^2.6.1",
+    "buffer": "^6.0.3",
+    "parcel": "^2.6.1",
+    "process": "^0.11.10"
   }
 }
