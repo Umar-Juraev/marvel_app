@@ -1,5 +1,4 @@
 @import "../assets/style/_variables";
-
 * {
   margin: 0;
   padding: 0;
@@ -7,11 +6,12 @@
   list-style: none;
   text-decoration: none;
 
-  //fire fox
+  //firefox
   scrollbar-color: $color-blue $color-dark;
   scrollbar-width: thin;
 
-  //chome ...
+
+  //chrome ...
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
