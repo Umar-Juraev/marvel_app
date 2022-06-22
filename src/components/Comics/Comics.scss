@@ -1,0 +1,28 @@
+@import "../../../assets/style/_variables";
+
+.comics {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 30px 10px;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $color-light;
+    transition: 0.4s;
+    cursor: pointer;
+    &:hover {
+      transform: rotate(-3deg) scale(0.95);
+      filter: saturate(170%);
+    }
+    span {
+      padding: 30px 30px 10px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

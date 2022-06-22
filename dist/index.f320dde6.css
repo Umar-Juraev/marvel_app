@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  scrollbar-color: #5151fa #000;
+  scrollbar-color: #5151fa #222;
   scrollbar-width: thin;
   margin: 0;
   padding: 0;
@@ -19,7 +19,7 @@
 }
 
 * ::-webkit-scrollbar-track {
-  background-color: #000;
+  background-color: #222;
 }
 
 button {
@@ -28,9 +28,96 @@ button {
 }
 
 body {
-  background-color: #000;
+  background-color: #222;
 }
 
+.comics {
+  grid-gap: 30px 10px;
+  grid-template-columns: auto auto auto auto;
+  display: grid;
+}
 
+.comics__item {
+  cursor: pointer;
+  background-color: #fefefe;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all .4s;
+  display: flex;
+}
+
+.comics__item:hover {
+  filter: saturate(170%);
+  transform: rotate(-3deg)scale(.95);
+}
+
+.comics__item span {
+  justify-content: center;
+  align-items: center;
+  padding: 30px 30px 10px;
+  display: flex;
+}
+
+.comics__item img {
+  width: 100%;
+}
+
+.error {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.error span p {
+  color: #f96363;
+  font-size: 20px;
+}
+
+.characters__box {
+  z-index: 5;
+  width: 90%;
+  background-color: #222;
+  gap: 20px;
+  padding: 50px 20px;
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  overflow-y: scroll;
+  transform: translate(-50%, -50%);
+}
+
+.characters__box__item {
+  z-index: 10;
+  background-color: #fefefe;
+  flex-direction: column;
+  display: flex;
+}
+
+.characters__box__item span {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.characters__close-btn {
+  background-color: #fefefe;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.characters__blur {
+  height: 100vh;
+  width: 100%;
+  opacity: .6;
+  background-color: #222;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /*# sourceMappingURL=index.f320dde6.css.map */
