@@ -1,15 +1,13 @@
 import axios from "axios";
+import { API_KEY } from "../../../new app/src/constants/api";
 
 
 class GetDataApi {
-    constructor() {
-        this.apiKey = 'a5837db97d72016c81a7a776f4240db9'
-    }
     async getData(url) {
         try {
             const response = await axios.get(url, {
                 params: {
-                    apikey: this.apiKey,
+                    apikey: API_KEY,
                     limit: 100
                 }
             })
