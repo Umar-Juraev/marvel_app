@@ -120,4 +120,38 @@ body {
   transform: translate(-50%, -50%);
 }
 
+@keyframes alert {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  10% {
+    transform: translateY(0);
+  }
+
+  90% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.notFound {
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+  border-radius: 0 0 30px 30px;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  animation: alert 3s ease-in;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+}
+
 /*# sourceMappingURL=index.f320dde6.css.map */

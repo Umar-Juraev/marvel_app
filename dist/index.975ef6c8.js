@@ -621,9 +621,9 @@ class Comics {
     eventListener() {
         document.querySelectorAll(".comics__item").forEach((elem)=>{
             const uri = elem.getAttribute("data-uri");
-            elem.addEventListener("click", ()=>{
-                (0, _charactersDefault.default).redner(uri);
-                document.body.style.overflow = "hidden";
+            elem.addEventListener("click", async ()=>{
+                await (0, _charactersDefault.default).redner(uri);
+                (0, _charactersDefault.default).eventListener();
             });
         });
     }
@@ -4061,9 +4061,7 @@ var _root = require("../../constants/root");
 var _getDataApi = require("../../utils/getDataApi");
 var _charactersScss = require("./Characters.scss");
 class Characters {
-    async redner(url) {
-        const data = await (0, _getDataApi.getDataApi).getData(url);
-        data.length;
+    rednerContent(data) {
         let htmlContent = ``;
         data.forEach(({ name , thumbnail: { extension , path  }  })=>{
             const imgSrc = `${path}/${(0, _api.IMG_STANDARD_XLARGE)}.${extension}`;
@@ -4079,11 +4077,32 @@ class Characters {
         <div class="characters__blur"></div> 
         </div>`;
         (0, _root.$indexModal).innerHTML = htmlWrapper;
+        document.body.style.overflow = "hidden";
+    }
+    renderNotification() {
+        const htmlContent = `
+    <div class="notFound">
+    Data not found
+    </div>
+    `;
+        (0, _root.$indexModal).innerHTML = htmlContent;
+        document.body.style.overflow = "unset";
+    }
+    async redner(url) {
+        const data = await (0, _getDataApi.getDataApi).getData(url);
+        data.length ? this.rednerContent(data) : this.renderNotification();
+    }
+    eventListener() {
+        const $close = document.querySelector(".characters__blur");
+        $close?.addEventListener("click", ()=>{
+            (0, _root.$indexModal).innerHTML = "";
+            document.body.style.overflow = "unset";
+        });
     }
 }
 exports.default = new Characters();
 
-},{"./Characters.scss":"aMLOE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../utils/getDataApi":"gJDYE","../../constants/api":"6kV46","../../constants/root":"PzFj7"}],"aMLOE":[function() {},{}],"hCAQe":[function(require,module,exports) {
+},{"../../constants/api":"6kV46","../../constants/root":"PzFj7","../../utils/getDataApi":"gJDYE","./Characters.scss":"aMLOE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aMLOE":[function() {},{}],"hCAQe":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _comicsDefault.default));
